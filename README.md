@@ -1,2 +1,0 @@
-# Inversor-Sentiment
-Homework Assignment
