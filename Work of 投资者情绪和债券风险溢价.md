@@ -24,15 +24,21 @@ $$
 
 ## rxba的来源
 
-TBC
+根据文献的公式，$\overline{rx}_{t+1}$从以下公式计算
+$$
+\overline{rx}_{t+1}=(1/4)\sum_{n=2}^5rx_{t+1}^{(n)}
+$$
 
 
+其中，$rx_{t+1}^{(n)}$ 的数据为小组其他成员所取得。目前，rxba的数据处理已经完成。
 
 ## CPt的来源
 
-
-
-
+$CP_t$的数据为
+$$
+\overline{rx}_{t+1}=\lambda_0+\lambda_1y_t^{(1)}+\lambda_2f_t^{1\to2}+\lambda_3f_t^{2\to3}+\lambda_4f_t^{3\to4}+\lambda_5f_t^{4\to5}+u_{t+1}
+$$
+这个回归中的拟合值，但是CP小组已经计算好了CP，我们将直接使用。
 
 ## LNt来源
 
