@@ -42,8 +42,10 @@ gen month=mofd(date_back)
 format %tmCCYY-NN month
 drop date_back date
 
-* save the result
-save "%your_location%\BWt.dta"
+* Place the variable in the first place
+order month
+
+
 
 ***************************
 ******** Merge rxba ********
@@ -58,6 +60,14 @@ merge 1:1 month using "rxba.dta"
 keep if _merge ==3
 drop _merge
 
+
+
 ***************************
 ******** Regression ********
 ***************************
+regress barrx_t1n SENT SENT2 deltaSENT
+predict BW
+keep month BW
+
+* save the result
+save "BWt.dta"

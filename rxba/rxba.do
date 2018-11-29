@@ -31,5 +31,8 @@ drop date_back date
 * drop if no rxba exists
 drop if barrx_t1n ==.
 
+* Place the variable in the first place
+order month
+
 * save the data
 save "rxba.dta"

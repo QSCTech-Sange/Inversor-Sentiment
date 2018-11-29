@@ -13,4 +13,12 @@ merge 1:1 month using "rxba.dta"
 keep if _merge==3
 drop _merge
 
+* Place the variable in the first place
+order month
+
+* do the regression
+regress barrx_t1n F1 F13 F3 F4 F8
+predict LN
+
+keep month LN
 save "LN.dta"
