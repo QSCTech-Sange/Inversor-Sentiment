@@ -3,7 +3,7 @@
 *********************************
 
 * import the file 
-import excel "%your_location%\Copy of Investor_Sentiment_Data_20160331_POST.xlsx", sheet("DATA") firstrow
+import excel "Copy of Investor_Sentiment_Data_20160331_POST.xlsx", sheet("DATA") firstrow
 
 * keep the time and SENT^
 * NOTE THAT SENT^ IS REPRESENTED IN SENT IN STATA, WHILE SENT IS REPRESENTED IN C
@@ -40,7 +40,7 @@ tostring date, replace
 gen date_back = date(date, "YM")
 gen month=mofd(date_back)
 format %tmCCYY-NN month
-drop date_back
+drop date_back date
 
 * save the result
 save "%your_location%\BWt.dta"

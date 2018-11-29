@@ -1,16 +1,8 @@
 * import file from teammates
-import excel "bond risk premium(1).xlsx", sheet("Sheet1") firstrow clear
-
-* replace the format string of double
-destring rx3, replace
-destring rx4, replace
-destring rx5, replace
-
-* generate rxba
-generate rxba = (rx2 + rx3 + rx4 + rx5)/4
+import excel "C:\Users\jimmy\OneDrive - zju.edu.cn\文档\GitHub\Inversor-Sentiment\rxba\CP值", sheet("Sheet1") firstrow clear
 
 * drop useless variables
-keep rxba date
+keep barrx_t1n date
 
 ***** Change the date to be the date format ****
 ***** and thus can be merged between different ****
@@ -34,7 +26,10 @@ gen month=mofd(date_back)
 format %tmCCYY-NN month
 
 * drop variables which is no longer useful
-drop date_back 
+drop date_back date
+
+* drop if no rxba exists
+drop if barrx_t1n ==.
 
 * save the data
 save "rxba.dta"
